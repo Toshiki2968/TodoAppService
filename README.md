@@ -13,13 +13,13 @@ URL:https://todoappservicetoshi.azurewebsites.net
 * HTML
 * CSS
 * javascript
-* React
+* React 17.0.2
 * ChakraUI
 
 ## バックエンド
 * C#
 * .NET Framework 6.0
-* SQL Server
+* Azure SQL Server
 
 ## インフラ
 * Azure(App Service, SQL Server, SQL データベース)
