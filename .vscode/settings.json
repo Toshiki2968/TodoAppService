@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net6.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/58714028-1912-4396-823f-a20617e54806/resourceGroups/TodoAppSample/providers/Microsoft.Web/sites/TodoAppSampleToshi"
+}
