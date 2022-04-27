@@ -26,6 +26,7 @@ export const EditTodoItem =
   const handleChangeInputTodoName = (e) => setText(e.currentTarget.value);
   const handleChangeInputTodoDate = (e) => setDate(e.currentTarget.value);
 
+  // タスク名エラーチェック
   const handleBlurText = () => {
     if (!text){
       setTextError("タスク名を入力してください")
@@ -86,12 +87,11 @@ export const EditTodoItem =
       </FormControl>      
       {dateError && <p style={{color: "red"}}>{dateError}</p>}
 
-      {/* 編集更新ボタン */}
+      {/* 更新ボタン */}
       <Button
         colorScheme="blue"
         variant="outline"
         size="sm"
-        // 追加
         mt="4"
         onClick={handleEditTodoName}
         disabled={textError || dateError}
@@ -99,11 +99,10 @@ export const EditTodoItem =
         更新
       </Button>
 
-      {/* 編集キャンセルボタン */}
+      {/* キャンセルボタン */}
       <Button
         variant="outline"
         size="sm"
-        // 追加
         mt="4"
         ml="2"
         onClick={handleEditCancel}
