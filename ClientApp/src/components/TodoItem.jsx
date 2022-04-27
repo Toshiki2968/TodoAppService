@@ -28,7 +28,7 @@ export const TodoItem =
   const _d = new Date();
   const nowDate = new Date(_d.getFullYear(), _d.getMonth(), _d.getDate(), 0, 0, 0);
   const checkPlanedDate = new Date(todo.planedDate.substr(0,10));
-  const planedDateStyleColor = checkPlanedDate < nowDate ? "red" : "black";
+  const planedDateStyleColor = checkPlanedDate < nowDate && !todo.completedDate ? "red" : "black";
 
   return(
     <ListItem
@@ -40,10 +40,9 @@ export const TodoItem =
       borderColor="gray.300"
     >
       {/* タスク名 */}
-      {/* 予定日を過ぎていれば強調 */}
       <Text mb="6">タスク：{todo.name}</Text>
 
-      {/* 予定日 */}
+      {/* 予定日(現在日時を過ぎていれば強調) */}
       <>
         予定日：
         <span style={{color: planedDateStyleColor}}>
