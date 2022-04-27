@@ -13,17 +13,6 @@ export const getAllTodosData = async() => {
     const response = await axios.get(todoDataUrl);
     return response.data;
 };
-// const getAll = () => {
-//     axios.get('https://localhost:7019/api/todo')
-//     .then((response) => {
-//         if(response.status === 200)
-//         {
-//         setPosts(response.data);
-//         }
-//     }).catch(()=>{
-//         alert("エラー");
-//     })
-// }
 
 // post
 export const addTodoData = async(todo) => {

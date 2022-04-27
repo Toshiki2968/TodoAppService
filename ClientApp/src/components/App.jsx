@@ -63,10 +63,8 @@ function App(){
       <Filter
         // 全件取得
         handleGetTodoListItem={handleGetTodoListItem}
-        
         // 完了済み取得
         handleGetCompletedTodoListItem={handleGetCompletedTodoListItem}
-
         // 未完了取得
         handleGetNotCompletedTodoListItem={handleGetNotCompletedTodoListItem}
       />
@@ -75,26 +73,16 @@ function App(){
       <TodoList
         // 現状タスク一覧
         todoList={todoList}
-
         // 完了⇔未完了
         toggleTodoListItemStatus={toggleTodoListItemStatus}
-
         // タスク削除
         deleteTodoListItem={deleteTodoListItem}
-
         // 編集キャンセル
         editCancel={editCancel}
-
         // タスク名更新
         editTodoName={editTodoName}
-
         // 編集フォームへ変換
         editTodoListItem={editTodoListItem}
-
-        title="TODOリスト"
-        as="h2"
-
-        fontSize={{base:"xl", md: "2xl"}}
       />
     </Container>
   );

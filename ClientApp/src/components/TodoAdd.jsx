@@ -9,19 +9,19 @@ export const TodoAdd = ({
     inputDate,
     handleAddTodoListItem
   }) =>{
-    const [nameError, setNameError] = useState("");
-    const [dateError, setDateError] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [dateError, setDateError] = useState("");
 
-    // タスク名エラーチェック
-    const handleBlurName = () => {
-      if (!inputTodo.current.value){
-        setNameError("タスク名を入力してください")
-      }else if (inputTodo.current.value.length > 100){
-        setNameError("タスク名は100文字以内で入力してください")
-      } else {
-        setNameError("")
-      }
+  // タスク名エラーチェック
+  const handleBlurName = () => {
+    if (!inputTodo.current.value){
+      setNameError("タスク名を入力してください")
+    }else if (inputTodo.current.value.length > 100){
+      setNameError("タスク名は100文字以内で入力してください")
+    } else {
+      setNameError("")
     }
+  }
 
   // 予定日エラーチェック
   const _d = new Date();
@@ -39,31 +39,34 @@ export const TodoAdd = ({
 
     return(
       <>
+        {/* タスク名 */}
         <FormControl>
           <FormLabel htmlFor='name' mt="5">タスク名：</FormLabel>
           <Textarea
             placeholder={placeholder}
             bgColor="white"
-            // mt="8"
             borderColor="gray.400"
             ref={inputTodo}
             onBlur={handleBlurName}
           />
         </FormControl>
         {nameError && <p style={{color: "red"}}>{nameError}</p>}
+
+        {/* 予定日 */}
         <FormControl>
           <FormLabel htmlFor='date' mt="3">予定日：</FormLabel>
           <Input
             type="date"
             bgColor="white"
             borderColor="gray.400"
-            // mt="8"
             ref={inputDate}
             onBlur={handleBlurDate}
             label="テスト"
           />
         </FormControl>
         {dateError && <p style={{color: "red"}}>{dateError}</p>}
+
+        {/* 追加ボタン */}
         <Button
           onClick={handleAddTodoListItem}
           colorScheme="blue"
